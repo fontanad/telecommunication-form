@@ -1,0 +1,119 @@
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{mathrsfs,amsmath}
+\usepackage{geometry}
+%margins
+\geometry{a4paper,top=0cm,bottom=0.1cm,left=0cm,right=0cm,
+    heightrounded,bindingoffset=0mm} 
+%column lines
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+\begin{document}
+\begin{multicols*}{3}
+%Preliminari
+\textbf{Preliminari} \\
+Eulero; \\
+$\cos(y)=\frac{e^{jy} + e^{-jy}}{2}$; \\
+$\sin(y)=\frac{e^{jy} - e^{-jy}}{2}$; \\
+\underline{\textit{Tempo Continuo}} \\
+Area $\int_{-\infty}^{+\infty} x(t)$; \\
+Energia $\int_{-\infty}^{+\infty} |x(t)|^2$; \\
+Potenza 
+$\lim_{T \to +\infty}\frac{1}{2T}\int_{-\infty}^{+\infty}|x(t)|^2$; \\
+\underline{\textit{Tempo Discreto}} \\
+Area $\sum_{n=-\infty}^{+\infty} x(nT) \cdot T$; \\
+Energia $\sum_{n=-\infty}^{+\infty}|x(nT)|^2\cdot T$; \\
+Potenza
+$\lim_{N \to +\infty}{\frac{1}{2N + 1}\int_{n=-N}^{+N}|x(nT)|^2\cdot T}$; \\
+%Segnali
+\textbf{Segnali}; \\
+Triangolo \\
+$k\cdot triangle(t/\alpha) = rect(\alpha t) * rect(\alpha t)$; \\
+Altezza Triangolo = k; \\
+Area (triangle) = Area[rect] x Area[rect]; \\ 
+$sinc^2(0) = 1$;\\
+%Tasformate di fourier
+\textbf{Fourier} \\
+TODO \\
+%Convoluzione
+\textbf{Convoluzione} \\
+\underline{\textit{Tempo Discreto}} \\
+$\sum_{k=-\infty}^{+\infty}{Th(nT-Kt)x(nT)}$; \\
+\underline{\textit{Tempo Continuo}} \\
+TODO \\ 
+\underline{\textit{Convoluzioni Note}} \\
+$triangle(t) = rect(t) * rect(t)$; \\
+%Modulazione 
+\textbf{Modulazione} \\
+$F_c>=2B$frequenza minima campionamento (B = 1/t)\\
+%Variabili aleatorie
+\textbf{Variabili Aleatorie}; \\
+Varianza $\sigma^2=M_x-m_x^2$ \\
+$M_x=\int_{-\infty}^{+\infty} a^2 f_x(a)$ (potenza statistica)\\
+$m_x=\int_{-\infty}^{+\infty} a f_x(a)$; (media)\\
+%conversione analogico digitake
+\textbf{Conversione ADC} \\
+$\Lambda_q$ segnale-errore di quantizzazione; \\
+$L=2^b$ livelli quantizzati; \\
+$\Lambda_q = L^2$ \\
+${(\Lambda_q)}_{dB}$ SNR di quantizzazione; \\
+${(\Lambda_q)}_{dB} = 6b$ b numero di bit; \\
+${\Lambda}_q=\frac{M_s}{M_{e_q}}$ ($M_{e_q}$ errore quantizzazione 
+,$M_s$ potenza statistica); \\
+$P_{sat}=2Q(\frac{V_{\max}}{\sigma_x})$ (probabilità saturazione) \\
+$R_b=F_c \cdot bit$ \\
+$R_b$ bit rate; \\
+$V_{\max}$ (dinamica) \\
+\underline{\textit{Dinamica Normale}} \\
+$V_{\max} = 4\sigma_a$ $\sigma_a$ deviazione standard;\\ 
+%Processi aleatori
+\textbf{Processi Aleatori}; \\
+$r_y(t)$ correlazione; \\
+$r_y(f) \xrightarrow{\mathscr{F}} R_y(f)$; \\ 
+$R_y(f)$ densità spettrale di potenza; \\
+$R_y(f) = R_x(f) |H(f)|^2$; \\
+$M_y = r_y(0)$ oppure 
+$M_y = \int_{-\infty}^{+\infty} R_y(f)$;\\
+\underline{\textit{Processi Aleatori noti}} \\
+Rumore Termico $R_n(f)=2kTR$ \\
+$m_n=0$ $M_n=\infty$; \\
+%Trasmissione numerica
+\textbf{Trasmissione Numerica}; \\
+SNR segnale-rumore; \\
+$SNR=\frac{M_s}{M_n}$; \\ $M_s$ segnale, $M_n$ errore (spesso $\sigma^2$) \\ 
+\underline{\textit{PAM}} \\
+TODO (formula generica calcolo dell' errore) \\
+\underline{\textit{M-PAM (M numero di coppie $\pm simbolo$) }} \\
+$P_e = \frac{2(M-1)}{M}Q(\frac{V_0}{\sigma_n})$;\\
+$SNR = \frac{V_0^2}{\sigma_n^2}\frac{M^2-1}{3}$; \\
+$P_e = \frac{2(M-1)}{M}Q(\sqrt{\frac{SNR \cdot 3}{M^2-1}})$; \\
+%Condizione di Intersybol Interference
+\textbf{Condizione di no ISI}; \\
+In tempo
+ $ q(t_{0}+kT)=
+\begin{dcases}
+    V_0\ne0 , k=0  \\
+    V_0=0, k\ne0  \\
+\end{dcases}
+$ \\
+In Frequenza
+$2B >= \frac{1}{T}$; \\
+%Canali Trasmissivi
+\textbf{Canali Trasmissivi}; \\
+$T=T_b \log_{2}{M}$ ($T_b = \frac{1}{R_b}$, T periodo di simbolo,
+M = numero di simboli);\\
+\underline{\textit{Radio}} \\
+TODO \\
+\underline{\textit{Cavo}} \\
+TODO \\
+\underline{\textit{Fibra Ottica}} \\
+$N_t=\frac{E_T}{\hbar\nu}$ $\nu =\frac{c}{\lambda}$,$\lambda$=lunghezza d'onda,
+\\ $\hbar$ costante di planck,DA FINIRE \\
+TODO \\
+\end{multicols*}
+\end{document}
