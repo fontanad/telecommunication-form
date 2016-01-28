@@ -39,7 +39,33 @@ Area (triangle) = Area[rect] x Area[rect]; \\
 $sinc^2(0) = 1$;\\
 %Tasformate di fourier
 \textbf{Fourier} \\
-TODO \\
+\underline{\textit{Tempo Continuo}} \\
+$X(f) = \int_{-\infty}^{+\infty} x(t) e^{-j2\pi ft} dt$; \\
+\underline{\textit{Proprietà}} \\
+$ax(t) + by(t) \xrightarrow{\mathscr{F}} aX(f) + bY(f)$; \\
+$x(-t) \xrightarrow{\mathscr{F}} X(-f)$; \\
+$x^{*}(t) \xrightarrow{\mathscr{F}} X^{*}(f)$; \\
+$x(t{\pm}t_0) \xrightarrow{\mathscr{F}} X(f)e^{{\pm}j2{\pi}f{t_0}}$; \\
+$x(kt) \xrightarrow{\mathscr{F}} \frac{1}{|k|}X(\frac{f}{k})$; \\
+$\frac{1}{|k|}X(\frac{t}{k}) \xrightarrow{\mathscr{F}} X(kf)$; \\
+$x(t)e^{{\pm}j2{\pi}{f_0}t} \xrightarrow{\mathscr{F}} X(f{\mp}f_0)$; \\
+$x(t)\cos(2{\pi}{f_0}t) \xrightarrow{\mathscr{F}} \frac{1}{2}[X(f - f_0) + X(f + f_0)]$; \\
+$\int_{-\infty}^{+\infty}x(\tau)y(t - \tau) d\tau \xrightarrow{\mathscr{F}} X(f)Y(f)$; \\
+$x(t)y(t) \xrightarrow{\mathscr{F}} \int_{-\infty}^{+\infty}X(a)Y(f - a) da$; \\
+\underline{\textit{Trasformate Continue Note}} \\
+$rect(t) \xrightarrow{\mathscr{F}} sinc(f)$; \\
+$A \xrightarrow{\mathscr{F}} A\delta (f)$; \\
+$e^{j2{\pi}f_{0}t} \xrightarrow{\mathscr{F}} \delta (f-f_0)$; \\
+$A\cos(2{\pi}f_{0}t) \xrightarrow{\mathscr{F}} {\frac{A}{2}}[\delta(f-f_0) + \delta(f+f_0)]$; \\
+$A\sin(2{\pi}f_{0}t) \xrightarrow{\mathscr{F}} {\frac{A}{2j}}[\delta(f-f_0) - \delta(f+f_0)]$; \\
+$sinc(t) \xrightarrow{\mathscr{F}} rect(f)$; \\
+$K\delta(t) \xrightarrow{\mathscr{F}} K$; \\
+$e^{-\pi{t^2}} \xrightarrow{\mathscr{F}} e^{-\pi{f^2}}$; \\
+\underline{\textit{Tempo Discreto}} \\
+$X(f) = \sum_{k=-\infty}^{+\infty}{Tx(nT)e^{-j2\pi fnT}}$; \\
+\underline{\textit{Trasformate Discrete Note}} \\
+$\delta(nT) \xrightarrow{\mathscr{F}} 1$; \\
+$\delta(nT - kT) \xrightarrow{\mathscr{F}} e^{-j2{\pi}{f_0}kT}$; \\
 %Convoluzione
 \textbf{Convoluzione} \\
 \underline{\textit{Tempo Discreto}} \\
