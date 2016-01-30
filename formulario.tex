@@ -151,6 +151,12 @@ filtro in trasmissione \\
 $h_F(t)=\frac{A_F}{\sqrt{2\pi}\sigma_F}e^{\frac{-1}{2}(\frac{t}{\sigma_F})^2}$
 \\
 $\sigma_F=\sigma_{F1} \cdot D$, $\sigma_{F1}$ dispersione km, D distanza fibra \\
+$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km \\
+oppure $(A_F)_{dB}=\alpha\cdot D$ \\ 
+segnale in recezione \\ 
+$g_R(t)=g_T(t)*h_F(t)$ dove 
+$g_R(t)=\frac{A_R}{\sqrt{2\pi}\sigma_R}e^{\frac{-1}{2}(\frac{t}{\sigma_R})^2}$
+\\ con $A_R = A_T \cdot A_F$ e $\sigma_R = \sqrt{\sigma_F^2 + \sigma_T^2}$
 
 \end{multicols*}
 \end{document}
