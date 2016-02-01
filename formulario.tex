@@ -150,7 +150,7 @@ $ \\
 $2B >= \frac{1}{T}$; \\
 %Canali Trasmissivi
 \textbf{Canali Trasmissivi}; \\
-$T=T_b \log_{2}{M}$ ($T_b = \frac{1}{R_b}$, T periodo di simbolo,
+$T=T_b \log_{2}{M}$ ($T_b = \frac{1}{R_b}$ periodo di bit, T periodo di simbolo,
 M = numero di simboli);\\
 \underline{\textit{Radio}} \\
 TODO \\
@@ -162,19 +162,19 @@ $\nu = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda \\
 $c=3\cdot10^8$m/s  velocità della luce \\
 $E_T = \sum_{x=0}^{n}{E_T(x)P(x)}$ x simboli \\
 $E_T(x) = area[g_T(t)]\cdot x$ \\
+$N_R = A_F\cdot N_T$ numero fotoni in recezione
+$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km, D distanza fibra\\
 \textit{con potenza massima/varianza }\\
 $g_T(t)=\frac{A_T}{\sqrt{2\pi}\sigma_T}e^{\frac{-1}{2}{(\frac{t}{\sigma_T})}^{2}}$
 \\ $P_T$ (o valore massimo)$=\frac{A_T}{\sqrt{2\pi}\sigma_T}$ \\
 $area[g_T(t)] = A_T$ \\
 \textit{filtro in trasmissione }\\
 $h_F(t)=\frac{A_F}{\sqrt{2\pi}\sigma_F}e^{\frac{-1}{2}{(\frac{t}{\sigma_F})}^{2}}$ \\
-$\sigma_F=\sigma_{F1} \cdot D$, $\sigma_{F1}$ dispersione km, D distanza fibra \\
-$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km \\
+$\sigma_F=\sigma_{F1} \cdot D$, $\sigma_{F1}$ dispersione km
 oppure ${(A_F)}_{dB}=\alpha\cdot D$ \\ 
 \textit{segnale in recezione}\\ 
 $g_R(t)=g_T(t)*h_F(t)$ dove \\
 $g_R(t)=\frac{A_R}{\sqrt{2\pi}\sigma_R}e^{\frac{-1}{2}{(\frac{t}{\sigma_R})}^{2}}$
 \\ con $A_R = A_T \cdot A_F$ e $\sigma_R = \sqrt{\sigma_F^2 + \sigma_T^2}$
-
 \end{multicols*}
 \end{document}
