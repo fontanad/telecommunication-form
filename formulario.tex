@@ -11,7 +11,6 @@
 \geometry{a4paper,top=0cm,bottom=0.1cm,left=0cm,right=0cm,
     heightrounded,bindingoffset=0mm} 
 %column lines
-%ciao
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{black}}
 \begin{document}
@@ -31,9 +30,12 @@ Area $\sum_{n=-\infty}^{+\infty} x(nT) \cdot T$; \\
 Energia $\sum_{n=-\infty}^{+\infty}|x(nT)|^2\cdot T$; \\
 Potenza
 $\lim_{N \to +\infty}{\frac{1}{2N + 1}\int_{n=-N}^{+N}|x(nT)|^2\cdot T}$; \\
+\underline{\textit{Serie}} \\
+\textit{Serie Geometrica}
+$\sum_{k=N_1}^{N_2}a=\frac{a^{N_1}-a^{N_2 + 1}}{1-a}$
 %Segnali
 \textbf{Segnali}; \\
-Triangolo \\
+\textit{Triangolo }\\
 $k\cdot triangle(t/\alpha) = rect(\alpha t) * rect(\alpha t)$; \\
 Altezza Triangolo = k; \\
 Area (triangle) = Area[rect] x Area[rect]; \\ 
@@ -72,9 +74,13 @@ $\delta(nT - kT) \xrightarrow{\mathscr{F}} e^{-j2{\pi}{f_0}kT}$; \\
 \underline{\textit{Tempo Discreto}} \\
 $\sum_{k=-\infty}^{+\infty}{Th(nT-Kt)x(nT)}$; \\
 \underline{\textit{Tempo Continuo}} \\
-TODO \\ 
+$z (t)=\int_{-\infty}^{+\infty}{x(\tau)y(t-\tau)}$\\
 \underline{\textit{Convoluzioni Note}} \\
 $triangle(t) = rect(t) * rect(t)$; \\
+\textit{caso rect diversa ampiezza} \\
+base maggiore = max base dei due rect\\
+baseMinore=baseRectMaggiore---baseRectMinore\\
+h= ((baseMaggiore---baseMinore)$\cdot$h)/2 \\
 %Modulazione 
 \textbf{Modulazione} \\
 $F_c>=2B$frequenza minima campionamento (B = 1/t)\\
@@ -93,42 +99,54 @@ ${(\Lambda_q)}_{dB} = 6b$ b numero di bit; \\
 ${\Lambda}_q=\frac{M_s}{M_{e_q}}$ ($M_{e_q}$ errore quantizzazione 
 ,$M_s$ potenza statistica); \\
 $P_{sat}=2Q(\frac{V_{\max}}{\sigma_x})$ (probabilità saturazione) \\
+$V_{\max}$ dinamica o valore con meno probabilità d'errore \\
 $R_b=F_c \cdot bit$ \\
 $R_b$ bit rate; \\
-$V_{\max}$ (dinamica) \\
 \underline{\textit{Dinamica Normale}} \\
 $V_{\max} = 4\sigma_a$ $\sigma_a$ deviazione standard;\\ 
+\underline{\textit{$M_s$ note}} \\
+sinc $M_s = \frac{V_0^2}{2}$ \\
 %Processi aleatori
 \textbf{Processi Aleatori}; \\
-$r_y(t)$ correlazione; \\
+$r_y(t)$ correlazione (discreta o continua) \\
 $r_y(f) \xrightarrow{\mathscr{F}} R_y(f)$; \\ 
 $R_y(f)$ densità spettrale di potenza; \\
 $R_y(f) = R_x(f) |H(f)|^2$; \\
-$M_y = r_y(0)$ oppure 
+densità spettrale di potenza media
+$M_y = r_y(0)$ (continua o discreta) oppure 
 $M_y = \int_{-\infty}^{+\infty} R_y(f)$;\\
+$M_y$ = Area del segnale in frequenza del processo aleatorio \\
+\textit{correlazione discreta} \\
+$R_a(f)=T\cdot\sum_{-\infty}^{+\infty}r_a(KT)e^{-j2\pi fKT}$ \\
 \underline{\textit{Processi Aleatori noti}} \\
 Rumore Termico $R_n(f)=2kTR$ \\
 $m_n=0$ $M_n=\infty$; \\
 %Trasmissione numerica
 \textbf{Trasmissione Numerica}; \\
+$V_0$ valore più alto dell' impulso di decisione. 
+$t=t_0 + KT$ istanti di decisione\\
+$t_0$ tempo in cui abbiamo $V_0$ \\
 SNR segnale-rumore; \\
 $SNR=\frac{M_s}{M_n}$; \\ $M_s$ segnale, $M_n$ errore (spesso $\sigma^2$) \\ 
 \underline{\textit{PAM}} \\
-TODO (formula generica calcolo dell' errore) \\
-\underline{\textit{M-PAM (M numero di coppie $\pm simbolo$) }} \\
+\textit{punti esterni}\\
+$P_e = Q(\frac{V_o / 2}{2}) $ \\
+\textit{punti interni }\\
+$P_e = 2Q(\frac{V_o / 2}{2}) $ \\
+\underline{\textit{M-PAM (M numero di simboli) }} \\
 $P_e = \frac{2(M-1)}{M}Q(\frac{V_0}{\sigma_n})$;\\
 $SNR = \frac{V_0^2}{\sigma_n^2}\frac{M^2-1}{3}$; \\
 $P_e = \frac{2(M-1)}{M}Q(\sqrt{\frac{SNR \cdot 3}{M^2-1}})$; \\
 %Condizione di Intersybol Interference
 \textbf{Condizione di no ISI}; \\
-In tempo
+\textit{In tempo}
  $ q(t_{0}+kT)=
 \begin{dcases}
     V_0\ne0 , k=0  \\
     V_0=0, k\ne0  \\
 \end{dcases}
 $ \\
-In Frequenza
+\textit{In Frequenza}
 $2B >= \frac{1}{T}$; \\
 %Canali Trasmissivi
 \textbf{Canali Trasmissivi}; \\
@@ -139,8 +157,24 @@ TODO \\
 \underline{\textit{Cavo}} \\
 TODO \\
 \underline{\textit{Fibra Ottica}} \\
-$N_t=\frac{E_T}{\hbar\nu}$ $\nu =\frac{c}{\lambda}$,$\lambda$=lunghezza d'onda,
-\\ $\hbar$ DA FINIRE \\
-TODO \\
+$N_T = \frac{E_T}{\hbar\nu}$ numero fotoni in trasmissione \\
+$\nu = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda \\
+$c=3\cdot10^8$m/s  velocità della luce \\
+$E_T = \sum_{x=0}^{n}{E_T(x)P(x)}$ x simboli \\
+$E_T(x) = area[g_T(t)]\cdot x$ \\
+\textit{con potenza massima/varianza }\\
+$g_T(t)=\frac{A_T}{\sqrt{2\pi}\sigma_T}e^{\frac{-1}{2}{(\frac{t}{\sigma_T})}^{2}}$
+\\ $P_T$ (o valore massimo)$=\frac{A_T}{\sqrt{2\pi}\sigma_T}$ \\
+$area[g_T(t)] = A_T$ \\
+\textit{filtro in trasmissione }\\
+$h_F(t)=\frac{A_F}{\sqrt{2\pi}\sigma_F}e^{\frac{-1}{2}{(\frac{t}{\sigma_F})}^{2}}$ \\
+$\sigma_F=\sigma_{F1} \cdot D$, $\sigma_{F1}$ dispersione km, D distanza fibra \\
+$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km \\
+oppure ${(A_F)}_{dB}=\alpha\cdot D$ \\ 
+\textit{segnale in recezione}\\ 
+$g_R(t)=g_T(t)*h_F(t)$ dove \\
+$g_R(t)=\frac{A_R}{\sqrt{2\pi}\sigma_R}e^{\frac{-1}{2}{(\frac{t}{\sigma_R})}^{2}}$
+\\ con $A_R = A_T \cdot A_F$ e $\sigma_R = \sqrt{\sigma_F^2 + \sigma_T^2}$
+
 \end{multicols*}
 \end{document}
