@@ -32,7 +32,7 @@ Potenza
 $\lim_{N \to +\infty}{\frac{1}{2N + 1}\int_{n=-N}^{+N}|x(nT)|^2\cdot T}$; \\
 \underline{\textit{Serie}} \\
 \textit{Serie Geometrica}
-$\sum_{k=N_1}^{N_2}a=\frac{a^{N_1}-a^{N_2 + 1}}{1-a}$
+$\sum_{k=N_1}^{N_2}a^k=\frac{a^{N_1}-a^{N_2 + 1}}{1-a}$
 %Segnali
 \textbf{Segnali}; \\
 \textit{Triangolo }\\
@@ -77,10 +77,10 @@ $\sum_{k=-\infty}^{+\infty}{Th(nT-Kt)x(nT)}$; \\
 $z (t)=\int_{-\infty}^{+\infty}{x(\tau)y(t-\tau)}$\\
 \underline{\textit{Convoluzioni Note}} \\
 $triangle(t) = rect(t) * rect(t)$; \\
-\textit{caso rect diversa ampiezza} \\
-base maggiore = max base dei due rect\\
+\textit{caso rect diversa ampiezza (Trapezio)} \\
+base maggiore=somma base dei due rect\\
 baseMinore=baseRectMaggiore---baseRectMinore\\
-h= ((baseMaggiore---baseMinore)$\cdot$h)/2 \\
+Area[Trapezio]=((baseMaggiore-baseMinore)$\cdot$h)/2\\
 %Modulazione 
 \textbf{Modulazione} \\
 $F_c>=2B$frequenza minima campionamento (B = 1/t)\\
@@ -163,7 +163,8 @@ $c=3\cdot10^8$m/s  velocità della luce \\
 $E_T = \sum_{x=0}^{n}{E_T(x)P(x)}$ x simboli \\
 $E_T(x) = area[g_T(t)]\cdot x$ \\
 $N_R = A_F\cdot N_T$ numero fotoni in recezione
-$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km, D distanza fibra\\
+$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km, D distanza fibra
+oppure ${(A_F)}_{dB}=\alpha\cdot D$ \\ 
 \textit{con potenza massima/varianza }\\
 $g_T(t)=\frac{A_T}{\sqrt{2\pi}\sigma_T}e^{\frac{-1}{2}{(\frac{t}{\sigma_T})}^{2}}$
 \\ $P_T$ (o valore massimo)$=\frac{A_T}{\sqrt{2\pi}\sigma_T}$ \\
@@ -171,7 +172,6 @@ $area[g_T(t)] = A_T$ \\
 \textit{filtro in trasmissione }\\
 $h_F(t)=\frac{A_F}{\sqrt{2\pi}\sigma_F}e^{\frac{-1}{2}{(\frac{t}{\sigma_F})}^{2}}$ \\
 $\sigma_F=\sigma_{F1} \cdot D$, $\sigma_{F1}$ dispersione km
-oppure ${(A_F)}_{dB}=\alpha\cdot D$ \\ 
 \textit{segnale in recezione}\\ 
 $g_R(t)=g_T(t)*h_F(t)$ dove \\
 $g_R(t)=\frac{A_R}{\sqrt{2\pi}\sigma_R}e^{\frac{-1}{2}{(\frac{t}{\sigma_R})}^{2}}$
