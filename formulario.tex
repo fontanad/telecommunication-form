@@ -25,7 +25,7 @@ $e^{j\alpha}=\cos(\alpha)+j\sin(\alpha)$ \\
 $|x(t)|^2=x(t)\cdot x^*(t)$\\
 $|x(t)|=\sqrt{{Re[x]}^{2} + {Im[x]}^{2}}$ \\
 $\phase{Z_1 Z_2} = \phase{Z_1}+\phase{Z_2}$ \\
-$\phase{Z}=arctan(\frac{Im[Z]}{Re[Z]})$
+$\phase{Z}=\arctan(\frac{Im[Z]}{Re[Z]})$
 \underline{\textit{Tempo Continuo}} \\
 Area $\int_{-\infty}^{+\infty} x(t)$; \\
 Energia $\int_{-\infty}^{+\infty} |x(t)|^2$; \\
@@ -130,7 +130,7 @@ $R_b=F_c \cdot bit$ con $R_b$ bit rate; \\
 \underline{\textit{Dinamica Normale}} \\
 $V_{\max} = 4\sigma_a$ con $\sigma_a$ deviazione standard;\\ 
 \underline{\textit{$M_s$ note}} \\
-sinc $M_s = \frac{V_0^2}{2}$ \\
+sinc: $M_s = \frac{V_0^2}{2}$ \\
 %Processi aleatori
 \textbf{Processi Aleatori}; \\
 $r_x(t)$ correlazione (discreta o continua) \\
@@ -162,9 +162,9 @@ $SNR=\frac{E[{(a_k A)}^{2}]}{E[{n_k}^{2}]}$ \\
 con $E[{(a_k A)}^{2}] = {A}^{2}\cdot \sum_{k=-\infty}^{+\infty}{P(a_k)\cdot {(a_k)}^{2}}$\\
 \underline{\textit{PAM (equidistanti equiprobabili)}} \\
 \textit{punti esterni}
-$P_e = Q(\frac{V_o / 2}{2}) $ \\
+$P_e = Q(\frac{V_o / 2}{\sigma}) $ \\
 \textit{punti interni }
-$P_e = 2Q(\frac{V_o / 2}{2}) $ \\
+$P_e = 2Q(\frac{V_o / 2}{\sigma}) $ \\
 \underline{\textit{PAM (formula generale)}} \\
 $P_e=\sum{P[\widehat{a_k} \ne a_k | a_k=\alpha]\cdot P(a_k=\alpha)}$
 \underline{\textit{M-PAM (M numero di simboli) }} \\
@@ -210,18 +210,18 @@ $E_T = \sum_{x=0}^{n}{E_T(x)P(x)}$ x simboli \\
 $E_T(x) = area[g_T(t)]\cdot x$ \\
 $N_R = A_F\cdot N_T$ numero fotoni in recezione
 $P_e=\frac{1}{2}e^{-2N_R}$ \\
-$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km, D distanza fibra
-oppure ${(A_F)}_{dB}=\alpha\cdot D$ \\ 
 \textit{con potenza massima/varianza }\\
 $g_T(t)=\frac{A_T}{\sqrt{2\pi}\sigma_T}e^{\frac{-1}{2}{(\frac{t}{\sigma_T})}^{2}}$
 \\ $P_T$ (o valore massimo)$=\frac{A_T}{\sqrt{2\pi}\sigma_T}$ \\
 $area[g_T(t)] = A_T$ \\
 \textit{filtro in trasmissione }\\
 $h_F(t)=\frac{A_F}{\sqrt{2\pi}\sigma_F}e^{\frac{-1}{2}{(\frac{t}{\sigma_F})}^{2}}$ \\
-$\sigma_F=\sigma_{F1} \cdot D$, $\sigma_{F1}$ dispersione km
+$\sigma_F=\sigma_{F1} \cdot D$, $\sigma_{F1}$ dispersione km\\
 \textit{segnale in recezione}\\ 
 $g_R(t)=g_T(t)*h_F(t)$ dove \\
 $g_R(t)=\frac{A_R}{\sqrt{2\pi}\sigma_R}e^{\frac{-1}{2}{(\frac{t}{\sigma_R})}^{2}}$
 \\ con $A_R = A_T \cdot A_F$ e $\sigma_R = \sqrt{\sigma_F^2 + \sigma_T^2}$
+$A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km, D distanza fibra
+oppure ${(A_F)}_{dB}=\alpha\cdot D$
 \end{multicols*}
 \end{document}
