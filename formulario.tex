@@ -185,9 +185,20 @@ $2B >= \frac{1}{T}$; \\
 $T=T_b \log_{2}{M}$ ($T_b = \frac{1}{R_b}$ periodo di bit, T periodo di simbolo,
 M = numero di simboli);\\
 \underline{\textit{Radio}} \\
-TODO \\
+$P_R = P_T \cdot G_T \cdot G_R \cdot (\frac{\lambda}{4\pi D})^{2}$\\
+dove $P_R$ potenza in recezione, $P_T$ potenza in trasmissione,
+$G_T$ guadagno antenna in trasmissione,$G_R$ guadagno in antenna in recezione
+$\lambda$ lunghezza d'onda, $D$ distanza\\
+$\nu = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda \\
+$c=3\cdot10^8$m/s  velocità della luce \\
+$P_{out}=P_{in}\cdot K_0\cdot\frac{1}{D^2}$\\
+$P_R >= P_{R_{\min}}$ con $P_{R_{\min}}$ sensibilità ricevitore \\
+$SNR=\frac{P_R}{P_N}$ \\
+$(SNR)_{dB}=(P_R)_{dB}-(P_N)_{dB}$ \\
 \underline{\textit{Cavo}} \\
-TODO \\
+$V_{out}=V_{IN}\cdot e^{-\beta L}$ con L=lunghezza cavo, \\
+$\beta$ attenuazione specifica\\
+$P_{out}=P_{IN}\cdot 10^{-\alpha D}$ \\
 \underline{\textit{Fibra Ottica}} \\
 $N_T = \frac{E_T}{\hbar\nu}$ numero fotoni in trasmissione \\
 $\nu = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda \\
@@ -195,6 +206,7 @@ $c=3\cdot10^8$m/s  velocità della luce \\
 $E_T = \sum_{x=0}^{n}{E_T(x)P(x)}$ x simboli \\
 $E_T(x) = area[g_T(t)]\cdot x$ \\
 $N_R = A_F\cdot N_T$ numero fotoni in recezione
+$P_e=\frac{1}{2}e^{-2N_R}$ \\
 $A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km, D distanza fibra
 oppure ${(A_F)}_{dB}=\alpha\cdot D$ \\ 
 \textit{con potenza massima/varianza }\\
