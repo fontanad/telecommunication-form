@@ -20,11 +20,16 @@
 Eulero; \\
 $\cos(y)=\frac{e^{jy} + e^{-jy}}{2}$; \\
 $\sin(y)=\frac{e^{jy} - e^{-jy}}{2}$; \\
+$e^{j\alpha}=\cos(\alpha)+j\sin(\alpha)$ \\
+$|x(t)|^2=x(t)\cdot x^*(t)$\\
+$|x(t)|=\sqrt{{Re[x]}^{2} + {Im[x]}^{2}}$ \\
 \underline{\textit{Tempo Continuo}} \\
 Area $\int_{-\infty}^{+\infty} x(t)$; \\
 Energia $\int_{-\infty}^{+\infty} |x(t)|^2$; \\
 Potenza 
-$\lim_{T \to +\infty}\frac{1}{2T}\int_{-\infty}^{+\infty}|x(t)|^2$; \\
+$\lim_{T \to +\infty}\frac{1}{2T}\int_{-T}^{T}|x(t)|^2$; \\
+\underline{\textit{Potenze Note}} \\
+$P_x=\frac{{A}^{2}}{2}$ di segnale sinosuidale\\
 \underline{\textit{Tempo Discreto}} \\
 Area $\sum_{n=-\infty}^{+\infty} x(nT) \cdot T$; \\
 Energia $\sum_{n=-\infty}^{+\infty}|x(nT)|^2\cdot T$; \\
@@ -35,10 +40,7 @@ $\lim_{N \to +\infty}{\frac{1}{2N + 1}\int_{n=-N}^{+N}|x(nT)|^2\cdot T}$; \\
 $\sum_{k=N_1}^{N_2}a^k=\frac{a^{N_1}-a^{N_2 + 1}}{1-a}$
 %Segnali
 \textbf{Segnali}; \\
-\textit{Triangolo }\\
-$k\cdot triangle(t/\alpha) = rect(\alpha t) * rect(\alpha t)$; \\
-Altezza Triangolo = k; \\
-Area (triangle) = Area[rect] x Area[rect]; \\ 
+$rect(\frac{t}{T_A})\cdot rect(\frac{1}{T_B})=rect(\frac{1}{\min(T_A,T_B)})$ \\
 $sinc^2(0) = 1$;\\
 %Tasformate di fourier
 \textbf{Fourier} \\
@@ -69,6 +71,9 @@ $X(f) = \sum_{k=-\infty}^{+\infty}{Tx(nT)e^{-j2\pi fnT}}$; \\
 \underline{\textit{Trasformate Discrete Note}} \\
 $\delta(nT) \xrightarrow{\mathscr{F}} 1$; \\
 $\delta(nT - kT) \xrightarrow{\mathscr{F}} e^{-j2{\pi}{f_0}kT}$; \\
+$x_n = d_n \xrightarrow{\mathscr{F}} \sum_{n=-\infty}^{+\infty}T\cdot x_n\cdot e^{-j2\pi fnT}$ \\
+dove $d_n$ valore discreto in un punto nT \\
+$x(nT{\pm}n_0T) \xrightarrow{\mathscr{F}} X(f)e^{{\pm}j2{\pi}f{n_0T}}$; \\
 %Convoluzione
 \textbf{Convoluzione} \\
 \underline{\textit{Tempo Discreto}} \\
@@ -76,20 +81,36 @@ $\sum_{k=-\infty}^{+\infty}{Th(nT-Kt)x(nT)}$; \\
 \underline{\textit{Tempo Continuo}} \\
 $z (t)=\int_{-\infty}^{+\infty}{x(\tau)y(t-\tau)}$\\
 \underline{\textit{Convoluzioni Note}} \\
+\textit{Triangolo }\\
+$k\cdot triangle(t\cdot \alpha) = rect(\alpha t) * rect(\alpha t)$; \\
+Altezza Triangolo = k; \\
+Area (triangle) = Area[rect] x Area[rect]; \\ 
 $triangle(t) = rect(t) * rect(t)$; \\
 \textit{caso rect diversa ampiezza (Trapezio)} \\
 base maggiore=somma base dei due rect\\
-baseMinore=baseRectMaggiore---baseRectMinore\\
-Area[Trapezio]=((baseMaggiore-baseMinore)$\cdot$h)/2\\
+baseMinore=baseRectMax---baseRectMin\\
+Area[Trapezio]= ((baseMax-baseMin)$\cdot$h)/2\\
 \textit{Convoluzione con delta} \\
 $X(f)*\delta(t \pm t_0)=X(f\pm t_0)$ \\ 
+\textit{Teorema di Parseval }\\
+$\int_{-\infty}^{+\infty}{x(t)\cdot y^*(t)dt = }$ 
+$\int_{-\infty}^{+\infty}{X(f)\cdot Y^*(f)df}$ \\
 %Modulazione 
 \textbf{Modulazione} \\
-$F_c>=2B$frequenza minima campionamento (B = 1/t)\\
+$F_c>=2B$frequenza minima campionamento (B = 1/T)\\
+\textbf{Campionamento e interpolazione} \\
+Aliasing presente se $X(f)$ è a banda $\infty$. \\
+Se $X(f)$ è a banda finita si può evitare aliasing.\\
+Per evitare aliasing si prende $F_c >= 2\cdot B_x$ \\
+\underline{\textit{Campionamento}}\\
+$Y(f)=\sum_{k=-\infty}^{+\infty}{X(f-\frac{K}{T})}$ \\
+\underline{\textit{Interpolazione}}\\
+$y(t)=\sum_{n=-\infty}^{+\infty}{T\cdot x(nT)\cdot g(t-nT)}$ \\
 %Variabili aleatorie
 \textbf{Variabili Aleatorie}; \\
 Varianza $\sigma^2=M_x-m_x^2$ \\
-$M_x=\int_{-\infty}^{+\infty} a^2 f_x(a)$ (potenza statistica)\\
+$M_x=E[x^2]=\int_{-\infty}^{+\infty} a^2 f_x(a)$ (potenza statistica) 
+e E = aspettazione\\
 $m_x=\int_{-\infty}^{+\infty} a f_x(a)$; (media)\\
 %conversione analogico digitake
 \textbf{Conversione ADC} \\
@@ -102,10 +123,9 @@ ${\Lambda}_q=\frac{M_s}{M_{e_q}}$ ($M_{e_q}$ errore quantizzazione
 ,$M_s$ potenza statistica); \\
 $P_{sat}=2Q(\frac{V_{\max}}{\sigma_x})$ (probabilità saturazione) \\
 $V_{\max}$ dinamica o valore con meno probabilità d'errore \\
-$R_b=F_c \cdot bit$ \\
-$R_b$ bit rate; \\
+$R_b=F_c \cdot bit$ con $R_b$ bit rate; \\
 \underline{\textit{Dinamica Normale}} \\
-$V_{\max} = 4\sigma_a$ $\sigma_a$ deviazione standard;\\ 
+$V_{\max} = 4\sigma_a$ con $\sigma_a$ deviazione standard;\\ 
 \underline{\textit{$M_s$ note}} \\
 sinc $M_s = \frac{V_0^2}{2}$ \\
 %Processi aleatori
@@ -114,8 +134,8 @@ $r_y(t)$ correlazione (discreta o continua) \\
 $r_y(f) \xrightarrow{\mathscr{F}} R_y(f)$; \\ 
 $R_y(f)$ densità spettrale di potenza; \\
 $R_y(f) = R_x(f) |H(f)|^2$; \\
-densità spettrale di potenza media
-$M_y = r_y(0)$ (continua o discreta) oppure 
+densità spettrale di potenza media \\
+$M_y = r_y(0)$ (continua o discreta) oppure \\
 $M_y = \int_{-\infty}^{+\infty} R_y(f)$;\\
 $M_y$ = Area del segnale in frequenza del processo aleatorio \\
 \textit{correlazione discreta} \\
