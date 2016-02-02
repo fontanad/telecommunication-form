@@ -122,8 +122,8 @@ ${\Lambda_q}$ SNR di quantizzazione; \\
 $\Lambda_q = L^2$ \\
 ${({\Lambda}_q)}_{dB}=10\log_{10}{(\Lambda_q)}$
 ${(\Lambda_q)}_{dB} = 6b$ b numero di bit; \\
-${\Lambda}_q=\frac{M_s}{M_{e_q}}$ ($M_{e_q}$ errore quantizzazione 
-,$M_s$ potenza statistica); \\
+${\Lambda}_q=\frac{M_s}{M_{e_q}}$ ($M_{e_q}$ potenza statistica errore
+,$M_s$ potenza statistica segnale); \\
 $P_{sat}=2Q(\frac{V_{\max}}{\sigma_x})$ (probabilità saturazione) \\
 $V_{\max}$ dinamica o valore con meno probabilità d'errore \\
 $R_b=F_c \cdot bit$ con $R_b$ bit rate; \\
@@ -160,11 +160,13 @@ SNR segnale-rumore; \\
 $SNR=\frac{M_s}{M_n}$; \\ $M_s$ segnale, $M_n$ errore (spesso $\sigma^2$) \\ 
 $SNR=\frac{E[{(a_k A)}^{2}]}{E[{n_k}^{2}]}$ \\
 con $E[{(a_k A)}^{2}] = {A}^{2}\cdot \sum_{k=-\infty}^{+\infty}{P(a_k)\cdot {(a_k)}^{2}}$\\
-\underline{\textit{PAM}} \\
-\textit{punti esterni}\\
+\underline{\textit{PAM (equidistanti equiprobabili)}} \\
+\textit{punti esterni}
 $P_e = Q(\frac{V_o / 2}{2}) $ \\
-\textit{punti interni }\\
+\textit{punti interni }
 $P_e = 2Q(\frac{V_o / 2}{2}) $ \\
+\underline{\textit{PAM (formula generale)}} \\
+$P_e=\sum{P[\widehat{a_k} \ne a_k | a_k=\alpha]\cdot P(a_k=\alpha)}$
 \underline{\textit{M-PAM (M numero di simboli) }} \\
 $P_e = \frac{2(M-1)}{M}Q(\frac{V_0}{\sigma_n})$;\\
 $SNR = \frac{V_0^2}{\sigma_n^2}\frac{M^2-1}{3}$; \\
@@ -189,16 +191,17 @@ $P_R = P_T \cdot G_T \cdot G_R \cdot (\frac{\lambda}{4\pi D})^{2}$\\
 dove $P_R$ potenza in recezione, $P_T$ potenza in trasmissione,
 $G_T$ guadagno antenna in trasmissione,$G_R$ guadagno in antenna in recezione
 $\lambda$ lunghezza d'onda, $D$ distanza\\
-$\nu = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda \\
+$f = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda, f frequenza portante
 $c=3\cdot10^8$m/s  velocità della luce \\
 $P_{out}=P_{in}\cdot K_0\cdot\frac{1}{D^2}$\\
-$P_R >= P_{R_{\min}}$ con $P_{R_{\min}}$ sensibilità ricevitore \\
+$P_R >= P_{R_{\min}}$, $P_{R_{\min}}$ sensibilità ricevitore \\
 $SNR=\frac{P_R}{P_N}$ \\
 $(SNR)_{dB}=(P_R)_{dB}-(P_N)_{dB}$ \\
 \underline{\textit{Cavo}} \\
 $V_{out}=V_{IN}\cdot e^{-\beta L}$ con L=lunghezza cavo, \\
 $\beta$ attenuazione specifica\\
 $P_{out}=P_{IN}\cdot 10^{-\alpha D}$ \\
+$(A_M)_{dB}=\alpha\cdot L$ con $\alpha$ attenuazione
 \underline{\textit{Fibra Ottica}} \\
 $N_T = \frac{E_T}{\hbar\nu}$ numero fotoni in trasmissione \\
 $\nu = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda \\
