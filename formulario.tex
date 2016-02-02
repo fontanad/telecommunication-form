@@ -7,6 +7,7 @@
 \usepackage{mathtools}
 \usepackage{mathrsfs,amsmath}
 \usepackage{geometry}
+\usepackage{steinmetz}
 %margins
 \geometry{a4paper,top=0cm,bottom=0.1cm,left=0cm,right=0cm,
     heightrounded,bindingoffset=0mm} 
@@ -23,6 +24,8 @@ $\sin(y)=\frac{e^{jy} - e^{-jy}}{2}$; \\
 $e^{j\alpha}=\cos(\alpha)+j\sin(\alpha)$ \\
 $|x(t)|^2=x(t)\cdot x^*(t)$\\
 $|x(t)|=\sqrt{{Re[x]}^{2} + {Im[x]}^{2}}$ \\
+$\phase{Z_1 Z_2} = \phase{Z_1}+\phase{Z_2}$ \\
+$\phase{Z}=arctan(\frac{Im[Z]}{Re[Z]})$
 \underline{\textit{Tempo Continuo}} \\
 Area $\int_{-\infty}^{+\infty} x(t)$; \\
 Energia $\int_{-\infty}^{+\infty} |x(t)|^2$; \\
@@ -114,10 +117,10 @@ e E = aspettazione\\
 $m_x=\int_{-\infty}^{+\infty} a f_x(a)$; (media)\\
 %conversione analogico digitake
 \textbf{Conversione ADC} \\
-$\Lambda_q$ segnale-errore di quantizzazione; \\
 $L=2^b$ livelli quantizzati; \\
+${\Lambda_q}$ SNR di quantizzazione; \\
 $\Lambda_q = L^2$ \\
-${(\Lambda_q)}_{dB}$ SNR di quantizzazione; \\
+${({\Lambda}_q)}_{dB}=10\log_{10}{(\Lambda_q)}$
 ${(\Lambda_q)}_{dB} = 6b$ b numero di bit; \\
 ${\Lambda}_q=\frac{M_s}{M_{e_q}}$ ($M_{e_q}$ errore quantizzazione 
 ,$M_s$ potenza statistica); \\
@@ -130,11 +133,16 @@ $V_{\max} = 4\sigma_a$ con $\sigma_a$ deviazione standard;\\
 sinc $M_s = \frac{V_0^2}{2}$ \\
 %Processi aleatori
 \textbf{Processi Aleatori}; \\
-$r_y(t)$ correlazione (discreta o continua) \\
-$r_y(f) \xrightarrow{\mathscr{F}} R_y(f)$; \\ 
-$R_y(f)$ densità spettrale di potenza; \\
-$R_y(f) = R_x(f) |H(f)|^2$; \\
-densità spettrale di potenza media \\
+$r_x(t)$ correlazione (discreta o continua) \\
+\textit{Densità spettrale di potenza} \\
+$r_x(f) \xrightarrow{\mathscr{F}} R_x(f)$; \\ 
+$R_x(f)$ densità spettrale di potenza; \\
+$R_y(f) = R_x(f) |H(f)|^2$ per un processo aleatorio filtrato\\
+N.B: Il rumore viene applicato all' ingresso del filtro in recezione. \\
+\textit{Densità spettrale di potenza media} \\
+$\overline{R_y}(f) = R_x(f) |H(f)|^2$ \\
+$\overline{m_y}(a)=m_a\cdot H(0)$ (media del processo)\\
+\textit{Potenza statistica del processo aleatorio} \\
 $M_y = r_y(0)$ (continua o discreta) oppure \\
 $M_y = \int_{-\infty}^{+\infty} R_y(f)$;\\
 $M_y$ = Area del segnale in frequenza del processo aleatorio \\
@@ -150,6 +158,8 @@ $t=t_0 + KT$ istanti di decisione\\
 $t_0$ tempo in cui abbiamo $V_0$ \\
 SNR segnale-rumore; \\
 $SNR=\frac{M_s}{M_n}$; \\ $M_s$ segnale, $M_n$ errore (spesso $\sigma^2$) \\ 
+$SNR=\frac{E[{(a_k A)}^{2}]}{E[{n_k}^{2}]}$ \\
+con $E[{(a_k A)}^{2}] = {A}^{2}\cdot \sum_{k=-\infty}^{+\infty}{P(a_k)\cdot {(a_k)}^{2}}$\\
 \underline{\textit{PAM}} \\
 \textit{punti esterni}\\
 $P_e = Q(\frac{V_o / 2}{2}) $ \\
