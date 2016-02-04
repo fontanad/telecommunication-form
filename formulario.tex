@@ -14,8 +14,25 @@
 %column lines
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{black}}
+%begin of the real document.
 \begin{document}
-\begin{multicols*}{3}
+\title{FORMULARIO TELECOMUNICAZIONI}
+\author{(Ordinati per cognome) Fontana Davide, Galiazzo Riccardo, Giachelle Fabio, Querinuzzi Giorgio }
+\maketitle
+\textbf{Attenzione}
+Questo formulario è rilasciato con licenza GPL per cui questo formulario non 
+può essere venduto. Al contrario può essere liberamente distribuito e ampliato 
+rilasciando il sorgente sempre con licenza GPL\@. \\
+Si invitano tutti quelli che ne sono interessati ad aggiungere formule 
+e/o correggere eventuali errori nel formulario.
+Vi ringraziamo in anticipo per i successivi contributi e ci auguriamo
+che questo lavoro possa servire a tutte quelle persone che come noi hanno 
+perso una montagna di tempo a reperire a tutte le formule.\\
+\textit{Gli Autori}
+\newpage
+%beginning of the multicolon document.
+%Change the number for change the number of the colons.
+\begin{multicols*}{2} 
 %Preliminari
 \textbf{Preliminari} \\
 Eulero; \\
@@ -25,7 +42,7 @@ $e^{j\alpha}=\cos(\alpha)+j\sin(\alpha)$ \\
 $|x(t)|^2=x(t)\cdot x^*(t)$\\
 $|x(t)|=\sqrt{{Re[x]}^{2} + {Im[x]}^{2}}$ \\
 $\phase{Z_1 Z_2} = \phase{Z_1}+\phase{Z_2}$ \\
-$\phase{Z}=\arctan(\frac{Im[Z]}{Re[Z]})$
+$\phase{Z}=\arctan(\frac{Im[Z]}{Re[Z]})$ \\
 \underline{\textit{Tempo Continuo}} \\
 Area $\int_{-\infty}^{+\infty} x(t)$; \\
 Energia $\int_{-\infty}^{+\infty} |x(t)|^2$; \\
@@ -39,8 +56,8 @@ Energia $\sum_{n=-\infty}^{+\infty}|x(nT)|^2\cdot T$; \\
 Potenza
 $\lim_{N \to +\infty}{\frac{1}{2N + 1}\int_{n=-N}^{+N}|x(nT)|^2\cdot T}$; \\
 \underline{\textit{Serie}} \\
-\textit{Serie Geometrica}
-$\sum_{k=N_1}^{N_2}a^k=\frac{a^{N_1}-a^{N_2 + 1}}{1-a}$
+\textit{Serie Geometrica}\\
+$\sum_{k=N_1}^{N_2}a^k=\frac{a^{N_1}-a^{N_2 + 1}}{1-a}$\\
 %Segnali
 \textbf{Segnali}; \\
 $rect(\frac{t}{T_A})\cdot rect(\frac{1}{T_B})=rect(\frac{1}{\min(T_A,T_B)})$ \\
@@ -67,6 +84,7 @@ $e^{j2{\pi}f_{0}t} \xrightarrow{\mathscr{F}} \delta (f-f_0)$; \\
 $A\cos(2{\pi}f_{0}t) \xrightarrow{\mathscr{F}} {\frac{A}{2}}[\delta(f-f_0) + \delta(f+f_0)]$; \\
 $A\sin(2{\pi}f_{0}t) \xrightarrow{\mathscr{F}} {\frac{A}{2j}}[\delta(f-f_0) - \delta(f+f_0)]$; \\
 $sinc(t) \xrightarrow{\mathscr{F}} rect(f)$; \\
+$sinc^2(t) \xrightarrow{\mathscr{F}} triangle(f)$; \\
 $K\delta(t) \xrightarrow{\mathscr{F}} K$; \\
 $e^{-\pi{t^2}} \xrightarrow{\mathscr{F}} e^{-\pi{f^2}}$; \\
 \underline{\textit{Tempo Discreto}} \\
@@ -87,6 +105,7 @@ $z (t)=\int_{-\infty}^{+\infty}{x(\tau)y(t-\tau)}$\\
 \textit{Triangolo }\\
 $k\cdot triangle(t\cdot \alpha) = rect(\alpha t) * rect(\alpha t)$; \\
 Altezza Triangolo = k; \\
+k=$\frac{1}{\alpha}$
 Area (triangle) = Area[rect] x Area[rect]; \\ 
 $triangle(t) = rect(t) * rect(t)$; \\
 \textit{caso rect diversa ampiezza (Trapezio)} \\
@@ -94,13 +113,14 @@ base maggiore=somma base dei due rect\\
 baseMinore=baseRectMax---baseRectMin\\
 Area[Trapezio]= ((baseMax-baseMin)$\cdot$h)/2\\
 \textit{Convoluzione con delta} \\
-$X(f)*\delta(t \pm t_0)=X(f\pm t_0)$ \\ 
+$X(f)*\delta(f \pm f_0)=X(f\pm f_0)$ \\ 
 \textit{Teorema di Parseval }\\
 $\int_{-\infty}^{+\infty}{x(t)\cdot y^*(t)dt = }$ 
 $\int_{-\infty}^{+\infty}{X(f)\cdot Y^*(f)df}$ \\
 %Modulazione 
 \textbf{Modulazione} \\
 $F_c>=2B$frequenza minima campionamento (B = 1/T)\\
+%Campionamento e interpolazione
 \textbf{Campionamento e interpolazione} \\
 Aliasing presente se $X(f)$ è a banda $\infty$. \\
 Se $X(f)$ è a banda finita si può evitare aliasing.\\
@@ -112,10 +132,10 @@ $y(t)=\sum_{n=-\infty}^{+\infty}{T\cdot x(nT)\cdot g(t-nT)}$ \\
 %Variabili aleatorie
 \textbf{Variabili Aleatorie}; \\
 Varianza $\sigma^2=M_x-m_x^2$ \\
-$M_x=E[x^2]=\int_{-\infty}^{+\infty} a^2 f_x(a)$ (potenza statistica) 
+$M_x=E[x^2]=\int_{-\infty}^{+\infty} a^2 f_x(a) da$ (potenza statistica) 
 e E = aspettazione\\
-$m_x=\int_{-\infty}^{+\infty} a f_x(a)$; (media)\\
-%conversione analogico digitake
+$m_x=\int_{-\infty}^{+\infty} a f_x(a) da$; (media)\\
+%Conversione Analogico Digitake
 \textbf{Conversione ADC} \\
 $L=2^b$ livelli quantizzati; \\
 ${\Lambda_q}$ SNR di quantizzazione; \\
@@ -131,16 +151,16 @@ $R_b=F_c \cdot bit$ con $R_b$ bit rate; \\
 $V_{\max} = 4\sigma_a$ con $\sigma_a$ deviazione standard;\\ 
 \underline{\textit{$M_s$ note}} \\
 sinc: $M_s = \frac{V_0^2}{2}$ \\
-%Processi aleatori
+%Processi Aleatori
 \textbf{Processi Aleatori}; \\
 $r_x(t)$ correlazione (discreta o continua) \\
 \textit{Densità spettrale di potenza} \\
 $r_x(f) \xrightarrow{\mathscr{F}} R_x(f)$; \\ 
 $R_x(f)$ densità spettrale di potenza; \\
 $R_y(f) = R_x(f) |H(f)|^2$ per un processo aleatorio filtrato\\
-N.B: Il rumore viene applicato all' ingresso del filtro in recezione. \\
+N.B\@:Il rumore viene applicato all' ingresso del filtro in recezione. \\
 \textit{Densità spettrale di potenza media} \\
-$\overline{R_y}(f) = R_x(f) |H(f)|^2$ \\
+$\overline{R_y}(f) = R_x(f) |\frac{G(f)}{T}|^2$, $G(f)$ impulso fondamentale\\
 $\overline{m_y}(a)=m_a\cdot H(0)$ (media del processo)\\
 \textit{Potenza statistica del processo aleatorio} \\
 $M_y = r_y(0)$ (continua o discreta) oppure \\
@@ -150,6 +170,7 @@ $M_y$ = Area del segnale in frequenza del processo aleatorio \\
 $R_a(f)=T\cdot\sum_{-\infty}^{+\infty}r_a(KT)e^{-j2\pi fKT}$ \\
 \underline{\textit{Processi Aleatori noti}} \\
 Rumore Termico $R_n(f)=2kTR$ \\
+dove T=temperatura, R=resistenza, k=costante\\
 $m_n=0$ $M_n=\infty$; \\
 %Trasmissione numerica
 \textbf{Trasmissione Numerica}; \\
@@ -166,7 +187,9 @@ $P_e = Q(\frac{V_o / 2}{\sigma}) $ \\
 \textit{punti interni }
 $P_e = 2Q(\frac{V_o / 2}{\sigma}) $ \\
 \underline{\textit{PAM (formula generale)}} \\
-$P_e=\sum{P[\widehat{a_k} \ne a_k | a_k=\alpha]\cdot P(a_k=\alpha)}$
+\textit{Espressione del segnale PAM}
+$s(t)=\sum_{k=-\infty}^{+\infty}a_k\cdot g(t-kT)$\\
+$P_e=\sum{P[\widehat{a_k} \ne a_k | a_k=\alpha]\cdot P(a_k=\alpha)}$ \\
 \underline{\textit{M-PAM (M numero di simboli) }} \\
 $P_e = \frac{2(M-1)}{M}Q(\frac{V_0}{\sigma_n})$;\\
 $SNR = \frac{V_0^2}{\sigma_n^2}\frac{M^2-1}{3}$; \\
@@ -187,7 +210,7 @@ $2B >= \frac{1}{T}$; \\
 $T=T_b \log_{2}{M}$ ($T_b = \frac{1}{R_b}$ periodo di bit, T periodo di simbolo,
 M = numero di simboli);\\
 \underline{\textit{Radio}} \\
-$P_R = P_T \cdot G_T \cdot G_R \cdot (\frac{\lambda}{4\pi D})^{2}$\\
+$P_R = P_T \cdot G_T \cdot G_R \cdot {(\frac{\lambda}{4\pi D})}^{2}$\\
 dove $P_R$ potenza in recezione, $P_T$ potenza in trasmissione,
 $G_T$ guadagno antenna in trasmissione,$G_R$ guadagno in antenna in recezione
 $\lambda$ lunghezza d'onda, $D$ distanza\\
@@ -196,12 +219,12 @@ $c=3\cdot10^8$m/s  velocità della luce \\
 $P_{out}=P_{in}\cdot K_0\cdot\frac{1}{D^2}$\\
 $P_R >= P_{R_{\min}}$, $P_{R_{\min}}$ sensibilità ricevitore \\
 $SNR=\frac{P_R}{P_N}$ \\
-$(SNR)_{dB}=(P_R)_{dB}-(P_N)_{dB}$ \\
+${(SNR)}_{dB}={(P_R)}_{dB}-{(P_N)}_{dB}$ \\
 \underline{\textit{Cavo}} \\
 $V_{out}=V_{IN}\cdot e^{-\beta L}$ con L=lunghezza cavo, \\
 $\beta$ attenuazione specifica\\
 $P_{out}=P_{IN}\cdot 10^{-\alpha D}$ \\
-$(A_M)_{dB}=\alpha\cdot L$ con $\alpha$ attenuazione
+${(A_M)}_{dB}=\alpha\cdot L$ con $\alpha$ attenuazione\\
 \underline{\textit{Fibra Ottica}} \\
 $N_T = \frac{E_T}{\hbar\nu}$ numero fotoni in trasmissione \\
 $\nu = \frac{c}{\lambda}$, $\lambda$ lunghezza d'onda \\
@@ -222,6 +245,16 @@ $g_R(t)=g_T(t)*h_F(t)$ dove \\
 $g_R(t)=\frac{A_R}{\sqrt{2\pi}\sigma_R}e^{\frac{-1}{2}{(\frac{t}{\sigma_R})}^{2}}$
 \\ con $A_R = A_T \cdot A_F$ e $\sigma_R = \sqrt{\sigma_F^2 + \sigma_T^2}$
 $A_F = 10^{\frac{-\alpha D}{10}}$ $\alpha$ attenuazione km, D distanza fibra
-oppure ${(A_F)}_{dB}=\alpha\cdot D$
+oppure ${(A_F)}_{dB}=\alpha\cdot D$ \\
+%Codifica
+\textbf{Codifica}; \\
+\underline{\textit{Codifica (3,1) (o codifica con fattore 3)}} \\
+$1\cdot R_{b_{out}}=3\cdot R_{b_{in}}$\\
+$R_{b_{out}}=\frac{R_{b_{in}}}{RateCodice}$\\
+$RateCodice=\frac{k}{N}$
+,k numero bit informazione, N totale bit del codice (nel caso 3,1) k=1,N=3 \\
+\textit{Probabilità di errore}\\
+$P_e=\sum_{i=\frac{N}{2}}^{N}\binom{N}{i}\cdot {P_e}^{i}\cdot {(1-P_e)}^{N-i}$\\
+$i=\frac{N}{2}$ viene approssimato per eccesso.\\
 \end{multicols*}
 \end{document}
